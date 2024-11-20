@@ -6,8 +6,6 @@ def bersihkan_layar():
 daftar_lomba = []
 
 def input_lomba():
-
-    print("Selamat datang di fitur input lomba")
     while True:
         nama = input("Silahkan masukkan nama lomba: ")
         deskripsi = input("Silahkan masukkan deskripsi lomba: ")
