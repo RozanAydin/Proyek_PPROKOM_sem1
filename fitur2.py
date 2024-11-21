@@ -4,6 +4,7 @@ def bersihkan_layar():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def soal_survey():
+    global daftar_soal
     global poin
     poin = []
     global poin_jawaban
@@ -89,7 +90,7 @@ def soal_survey():
             jawaban = input("Masukkan angka yang sesuai dengan kondisi fasilitas: ")
             if jawaban.isdigit():
                 jawaban = int(jawaban)
-                if 1 <= jawaban <= 10:
+                if 1 <= jawaban <= 4:
                     poin_jawaban += jawaban
                     poin.append(jawaban)
                     bersihkan_layar()
@@ -101,6 +102,32 @@ def soal_survey():
 
     print("Terima Kasih karena telah mengisi survey")
     print("")
+
+def lihat_jawaban():
+    if not daftar_sekolah:
+        print("Data Survey Belum Tersedia")
+        return
+    
+    lihat_survey()
+    try:
+        pilihan = int(input("Pilih Survey berdasarkan indexnya: "))
+        if 1 <= pilihan <= len(daftar_sekolah):
+            data_terpilih = sorted(daftar_sekolah, key=lambda x: x['Skala'])[pilihan - 1]
+            print("\n======== DETAIL SURVEY ========")
+            print(f"Nama Pengisi    : {data_terpilih['Nama']}")
+            print(f"Sekolah         : {data_terpilih['Sekolah']}")
+            print(f"Alamat Sekolah  : {data_terpilih['Alamat_Sekolah']}")
+            print(f"Poin Kelayakan  : {data_terpilih['Skala']}")
+            print(f"Catatan         : {data_terpilih['Catatan']}\n")
+
+            print("========== JAWABAN SURVEY ==========")
+            for i, (soal, nilai) in enumerate(zip(daftar_soal, poin), start=1):
+                print(f"{i}. {soal}\n   Poin: {nilai}\n")
+                input("")
+        else:
+            print("Indeks tidak valid. Silakan pilih indeks yang tersedia.")
+    except ValueError:
+        print("Input tidak valid. Harap masukkan angka indeks.")
 
 
 daftar_sekolah = []
@@ -126,12 +153,13 @@ def lihat_survey():
     if daftar_sekolah:
         print("\n======== DATA SURVEY ========")
         daftar_sekolah_sorted = sorted(daftar_sekolah, key=lambda x: x['Skala'])
-        for data in daftar_sekolah_sorted:
-            print(f"Nama Pengisi    :{data['Nama']}")
-            print(f"Sekolah         :{data['Sekolah']}")
-            print(f"Alamat Sekolah  :{data['Alamat_Sekolah']}")
-            print(f"Poin Kelayakan  :{data['Skala']}\n")
-            print(f"Catatan         :{data['Catatan']}\n")
+        for i, data in enumerate(daftar_sekolah_sorted, start=1):
+            print(f"Index           : {i}")
+            print(f"Nama Pengisi    : {data['Nama']}")
+            print(f"Sekolah         : {data['Sekolah']}")
+            print(f"Alamat Sekolah  : {data['Alamat_Sekolah']}")
+            print(f"Poin Kelayakan  : {data['Skala']}")
+            print(f"Catatan         : {data['Catatan']}\n")
     else:
         print("Data Survey Belum Tersedia")
 
@@ -141,7 +169,8 @@ def menu_fitur2():
         print("========== MENU ==========") 
         print("[1] Isi Survey")
         print("[2] Lihat Hasil Survey")
-        print("[3] Kembali Ke Menu")
+        print("[3] Lihat Jawaban")
+        print("[4] Kembali Ke Menu")
         pilih = input("PILIH MENU> ")
         print("\n")
 
@@ -152,6 +181,9 @@ def menu_fitur2():
             bersihkan_layar()
             lihat_survey()
         elif pilih == "3":
+            bersihkan_layar()
+            lihat_jawaban()
+        elif pilih == "4":
             bersihkan_layar()
             break
         else:
