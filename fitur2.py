@@ -87,7 +87,6 @@ def soal_survey():
         jawaban_valid = False
         while not jawaban_valid:
             jawaban = input("Masukkan angka yang sesuai dengan kondisi fasilitas: ")
-            
             if jawaban.isdigit():
                 jawaban = int(jawaban)
                 if 1 <= jawaban <= 10:
@@ -108,15 +107,18 @@ daftar_sekolah = []
 def isi_survey():
     print("Selamat datang di fitur Isi Survey!")
     nama = input("Silahkan masukkan Nama: ")
-    sekolah = input("Silahkan masukkan Asal Sekolah: ")
+    sekolah = input("Silahkan masukkan nama Sekolah: ")
     daerah = input("Silahkan masukkan Alamat Sekolah: ")
     bersihkan_layar()
     soal_survey()
+    catatan = input("Silahkan tambahkan catatan mengenai sekolah tersebut: ")
+    bersihkan_layar()
     data = {
         "Nama":nama,
         "Sekolah":sekolah,
         "Alamat_Sekolah":daerah,
-        "Skala":poin_jawaban
+        "Skala":poin_jawaban,
+        "Catatan":catatan
     }
     daftar_sekolah.append(data)
 
@@ -129,6 +131,7 @@ def lihat_survey():
             print(f"Sekolah         :{data['Sekolah']}")
             print(f"Alamat Sekolah  :{data['Alamat_Sekolah']}")
             print(f"Poin Kelayakan  :{data['Skala']}\n")
+            print(f"Catatan         :{data['Catatan']}\n")
     else:
         print("Data Survey Belum Tersedia")
 
@@ -152,4 +155,5 @@ def menu_fitur2():
             bersihkan_layar()
             break
         else:
+            bersihkan_layar()
             print("Input Salah!")
