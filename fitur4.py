@@ -59,5 +59,6 @@ def menu_fitur4():
         elif menu == 3:
             bersihkan_layar()
             break
-        else: 
+        else:
+            bersihkan_layar()
             print("Input Salah!")
