@@ -32,7 +32,7 @@ def menu_fitur3():
         print("\n========== MENU ==========")
         print("1. Tambahkan nama siswa")
         print("2. Tampilkan siswa berprestasi")
-        print("3. Keluar")
+        print("3. Kembali Ke Menu")
 
         pilihan = input("Masukkan pilihan: ")
 
@@ -46,4 +46,5 @@ def menu_fitur3():
             bersihkan_layar()
             break
         else:
+            bersihkan_layar()
             print("Pilihan tidak valid.")
