@@ -12,9 +12,13 @@ def fungsi_utama():
     while True:
         print("-" * 69)
         print(text2art("KIDUNG    ASA", font="standard"))
-        print("-" * 69)
-        print("\n") 
-        print("========== MENU ==========") 
+        print("-" * 69) 
+        print("""
+Kidung Asa adalah platform yang didedikasikan untuk mendukung para pejuang pendidikan
+dalam upaya pemerataan kualitas pendidikan di Indonesia, khususnya bagi murid sekolah dasar
+di daerah dengan akses terbatas terhadap sumber belajar.
+            """)
+        print("========== MENU ==========")
         print("[1] Fitur 1")
         print("[2] Fitur 2")
         print("[3] Fitur 3")
