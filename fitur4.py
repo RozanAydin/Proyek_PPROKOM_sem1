@@ -8,9 +8,10 @@ daftar_lomba = []
 def input_lomba():
     while True:
         nama = input("Silahkan masukkan nama lomba: ")
-        deskripsi = input("Silahkan masukkan deskripsi lomba: ")
-        syarat = input("Silahkan masukkan syarat lomba: ")
-        tenggat = input("Silahkan masukkan tenggat lomba: ")
+        deskripsi = input("Silakan masukkan deskripsi lomba: ")
+        syarat = input("Silakan masukkan syarat lomba: ")
+        tenggat = input("Silakan masukkan tenggat lomba: ")
+        alamat = input("Silakan masukkan alamat pengiriman: ")
 
         lomba = {
             "nama" : nama,
@@ -35,7 +36,8 @@ def lihat_lomba():
             print(f"Nama        :{lomba['nama']}")
             print(f"Deskripsi   :{lomba['deskripsi']}")
             print(f"Syarat      :{lomba['syarat']}")
-            print(f"Tenggat     :{lomba['tenggat']}\n")
+            print(f"Tenggat     :{lomba['tenggat']}")
+            print(f"Kirim ke    :{lomba['alamat']}\n")
     else:
         print("Belum ada lomba yang terdaftar")
 
