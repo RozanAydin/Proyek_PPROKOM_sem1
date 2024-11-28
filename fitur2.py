@@ -188,4 +188,4 @@ def menu_fitur2():
             break
         else:
             bersihkan_layar()
-            print("Input Salah!")
+            print("Pilihan tidak valid!\n")
