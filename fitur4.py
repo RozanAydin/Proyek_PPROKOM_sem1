@@ -49,18 +49,18 @@ def menu_fitur4():
         print("[1] Input Lomba")
         print("[2] Lihat Lomba")
         print("[3] Kembali Ke Menu")
-        menu = int(input("PILIH MENU> "))
+        menu = (input("PILIH MENU> "))
         print("\n")
 
-        if menu == 1: 
+        if menu == "1": 
             bersihkan_layar()
             input_lomba()
-        elif menu == 2: 
+        elif menu == "2": 
             bersihkan_layar()
             lihat_lomba() 
-        elif menu == 3:
+        elif menu == "3":
             bersihkan_layar()
             break
         else:
             bersihkan_layar()
-            print("Input Salah!")
+            print("Pilihan tidak valid!\n")
