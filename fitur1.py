@@ -94,4 +94,4 @@ def menu_fitur1():
             break
         else:
             bersihkan_layar()
-            print("Pilihan tidak valid. Silakan pilih opsi yang benar.\n")
+            print("Pilihan tidak valid.\n")
