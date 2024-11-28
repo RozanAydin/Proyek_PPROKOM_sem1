@@ -44,6 +44,6 @@ di daerah dengan akses terbatas terhadap sumber belajar.
             exit() 
         else: 
             bersihkan_layar() 
-            print("Input Salah!")
+            print("Pilihan tidak valid!\n")
 
 fungsi_utama()
