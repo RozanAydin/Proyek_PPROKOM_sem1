@@ -47,4 +47,4 @@ def menu_fitur3():
             break
         else:
             bersihkan_layar()
-            print("Pilihan tidak valid.")
+            print("Pilihan tidak valid!\n")
