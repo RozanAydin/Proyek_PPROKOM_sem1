@@ -96,7 +96,7 @@ def soal_survey():
                     bersihkan_layar()
                     jawaban_valid = True
                 else:
-                    print("Input tidak valid, masukkan angka antara 1 hingga 10.")
+                    print("Input tidak valid, masukkan angka antara 1 hingga 4.")
             else:
                 print("Input tidak valid, masukkan angka.")
 
