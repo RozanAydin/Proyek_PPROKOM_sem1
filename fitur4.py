@@ -12,11 +12,15 @@ def deadline():
         tahun = input("Masukkan tahun: ")
         bulan = input("Masukkan bulan (1-12): ")
         tanggal = input("Masukkan tanggal (1-31): ")
+        jam = input("Masukkan jam (0-23): ")
+        menit = input("Masukkan menit (0-59): ")
 
-        if tahun.isdigit() and bulan.isdigit() and tanggal.isdigit():
+        if tahun.isdigit() and bulan.isdigit() and tanggal.isdigit() and jam.isdigit() and menit.isdigit():
             tahun = int(tahun)
             bulan = int(bulan)
             tanggal = int(tanggal)
+            jam = int(jam)
+            menit = int(menit)
 
             if 1 <= bulan <= 12:
                 if 1 <= tanggal <= 31:
@@ -26,9 +30,12 @@ def deadline():
                     if bulan == 2 and tanggal == 29 and not (tahun % 4 == 0 and (tahun % 100 != 0 or tahun % 400 == 0)):
                         print("Tanggal tidak valid! Tahun tersebut bukan tahun kabisat.")
                         continue
-                    global tenggat
-                    tenggat = datetime.datetime(tahun, bulan, tanggal)
-                    return tenggat
+                    if 0 <= jam <= 23 and 0 <= menit <= 59:
+                        global tenggat
+                        tenggat = datetime.datetime(tahun, bulan, tanggal, jam, menit)
+                        return tenggat
+                    else:
+                        print("Jam atau menit tidak valid! Pastikan jam 0-23, dan menit 0-59.")
                 else:
                     print("Tanggal harus antara 1 dan 31.")
             else:
@@ -54,16 +61,16 @@ def input_lomba():
         }
         daftar_lomba.append(lomba)
         print("Lomba berhasil ditambahkan")
-        pilihan = input("\nInput lomba lain? [Y/N]")
-        if pilihan.capitalize() == "Y":
-            continue
-        elif pilihan.capitalize() == "N":
-            bersihkan_layar()
-            break
-        else:
-            bersihkan_layar()
-            print("Input Salah!")
-            break
+        while True:
+            pilihan = input("\nInput lomba lain? [Y/N]")
+            if pilihan.capitalize() == "Y":
+                bersihkan_layar()
+                break
+            elif pilihan.capitalize() == "N":
+                bersihkan_layar()
+                return
+            else:
+                print("Input Salah! Masukkan hanya 'Y' atau 'N'.")
 
 def lihat_lomba():
     if daftar_lomba:
