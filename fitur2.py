@@ -109,25 +109,28 @@ def lihat_jawaban():
         return
     
     lihat_survey()
-    try:
-        pilihan = int(input("Pilih Survey berdasarkan indexnya: "))
-        if 1 <= pilihan <= len(daftar_sekolah):
-            data_terpilih = sorted(daftar_sekolah, key=lambda x: x['Skala'])[pilihan - 1]
-            print("\n======== DETAIL SURVEY ========")
-            print(f"Nama Pengisi    : {data_terpilih['Nama']}")
-            print(f"Sekolah         : {data_terpilih['Sekolah']}")
-            print(f"Alamat Sekolah  : {data_terpilih['Alamat_Sekolah']}")
-            print(f"Poin Kelayakan  : {data_terpilih['Skala']}")
-            print(f"Catatan         : {data_terpilih['Catatan']}\n")
+    while True:
+        try:
+            pilihan = int(input("Pilih Survey berdasarkan indexnya: "))
+            if 1 <= pilihan <= len(daftar_sekolah):
+                bersihkan_layar()
+                data_terpilih = sorted(daftar_sekolah, key=lambda x: x['Skala'])[pilihan - 1]
+                print("\n======== DETAIL SURVEY ========")
+                print(f"Nama Pengisi    : {data_terpilih['Nama']}")
+                print(f"Sekolah         : {data_terpilih['Sekolah']}")
+                print(f"Alamat Sekolah  : {data_terpilih['Alamat_Sekolah']}")
+                print(f"Poin Kelayakan  : {data_terpilih['Skala']}")
+                print(f"Catatan         : {data_terpilih['Catatan']}\n")
 
-            print("========== JAWABAN SURVEY ==========")
-            for i, (soal, nilai) in enumerate(zip(daftar_soal, poin), start=1):
-                print(f"{i}. {soal}\n   Poin: {nilai}\n")
-                input("")
-        else:
-            print("Indeks tidak valid. Silakan pilih indeks yang tersedia.")
-    except ValueError:
-        print("Input tidak valid. Harap masukkan angka indeks.")
+                print("========== JAWABAN SURVEY ==========")
+                for i, (soal, nilai) in enumerate(zip(daftar_soal, poin), start=1):
+                    print(f"{i}. {soal}\n   Poin: {nilai}\n")
+                    input("")
+                break
+            else:
+                print("Indeks tidak valid. Silakan pilih indeks yang tersedia.")
+        except ValueError:
+            print("Input tidak valid. Harap masukkan angka indeks.")
 
 
 daftar_sekolah = []
