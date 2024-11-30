@@ -25,7 +25,7 @@ def tampilkan_siswa_berprestasi():
         print(f"Nama         : {s['nama']}")
         print(f"Daerah asal  : {s['daerah_asal']}")
         print(f"Nama sekolah : {s['nama_sekolah']}")
-        print(f"Prestasi     : {s['nama_prestasi']}")
+        print(f"Prestasi     : {s['nama_prestasi']}\n")
 
 def menu_fitur3():
     while True:
