@@ -7,10 +7,10 @@ def bersihkan_layar():
 
 def tampilkan_menu():
     print("\n========== MENU ==========")
-    print("1. Tambah Materi Pembelajaaran ")
-    print("2. Lihat Materi Pembelajaran")
-    print("3. Revisi Materi Pembelajaran")
-    print("4. Kembali Ke Menu")
+    print("[1.] Tambah Materi Pembelajaaran ")
+    print("[2.] Lihat Materi Pembelajaran")
+    print("[3.] Revisi Materi Pembelajaran")
+    print("[4.] Kembali Ke Menu")
 
 def tambah_materi():
     judul = input("Masukkan judul materi: ")
@@ -76,7 +76,7 @@ def revisi_materi():
 def menu_fitur1():
     while True:
         tampilkan_menu()
-        pilihan = input("Pilih opsi: ")
+        pilihan = input("Masukkan Nomor Pilihan: ")
         
         if pilihan == '1':
             bersihkan_layar()
