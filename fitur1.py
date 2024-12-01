@@ -6,7 +6,7 @@ def bersihkan_layar():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def tampilkan_menu():
-    print("\n========== MENU ==========")
+    print("\n===== Menu Relung Materi =====")
     print("[1] Tambah Materi Pembelajaaran ")
     print("[2] Lihat Materi Pembelajaran")
     print("[3] Revisi Materi Pembelajaran")
