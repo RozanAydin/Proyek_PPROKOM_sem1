@@ -97,7 +97,7 @@ def menu_fitur4():
         print("[1] Input Lomba")
         print("[2] Lihat Lomba")
         print("[3] Kembali Ke Menu")
-        menu = (input("PILIH MENU> "))
+        menu = (input("Masukkan Nomor Pilihan: "))
         print("\n")
 
         if menu == "1": 
