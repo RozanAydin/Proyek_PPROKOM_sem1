@@ -29,10 +29,10 @@ def tampilkan_siswa_berprestasi():
 
 def menu_fitur3():
     while True:
-        print("\n========== MENU ==========")
-        print("[1.] Tambahkan nama siswa")
-        print("[2.] Tampilkan siswa berprestasi")
-        print("[3.] Kembali Ke Menu")
+        print("\n===== Menu Relung Prestasi =====")
+        print("[1] Tambahkan nama siswa")
+        print("[2] Tampilkan siswa berprestasi")
+        print("[3] Kembali Ke Menu")
 
         pilihan = input("Masukkan Nomor Pilihan: ")
 
