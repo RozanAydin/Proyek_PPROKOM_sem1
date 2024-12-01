@@ -3,7 +3,7 @@ import os
 def bersihkan_layar():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def soal_survey():
+def soal_survei():
     global daftar_soal
     global poin
     poin = []
@@ -100,29 +100,29 @@ def soal_survey():
             else:
                 print("Input tidak valid, masukkan angka.")
 
-    print("Terima Kasih karena telah mengisi survey")
+    print("Terima Kasih karena telah mengisi survei")
     print("")
 
 def lihat_jawaban():
     if not daftar_sekolah:
-        print("Data Survey Belum Tersedia")
+        print("Data Survei Belum Tersedia")
         return
     
-    lihat_survey()
+    lihat_survei()
     while True:
         try:
-            pilihan = int(input("Pilih Survey berdasarkan indexnya: "))
+            pilihan = int(input("Pilih Survei berdasarkan indexnya: "))
             if 1 <= pilihan <= len(daftar_sekolah):
                 bersihkan_layar()
                 data_terpilih = sorted(daftar_sekolah, key=lambda x: x['Skala'])[pilihan - 1]
-                print("\n======== DETAIL SURVEY ========")
+                print("\n======== DETAIL SURVEI ========")
                 print(f"Nama Pengisi    : {data_terpilih['Nama']}")
                 print(f"Sekolah         : {data_terpilih['Sekolah']}")
                 print(f"Alamat Sekolah  : {data_terpilih['Alamat_Sekolah']}")
                 print(f"Poin Kelayakan  : {data_terpilih['Skala']}")
                 print(f"Catatan         : {data_terpilih['Catatan']}\n")
 
-                print("========== JAWABAN SURVEY ==========")
+                print("========== JAWABAN SURVEI ==========")
                 for i, (soal, nilai) in enumerate(zip(daftar_soal, poin), start=1):
                     print(f"{i}. {soal}\n   Poin: {nilai}\n")
                     input("")
@@ -134,13 +134,13 @@ def lihat_jawaban():
 
 
 daftar_sekolah = []
-def isi_survey():
-    print("Selamat datang di fitur Isi Survey!")
+def isi_survei():
+    print("Selamat datang di fitur Isi Survei!")
     nama = input("Silahkan masukkan Nama: ")
     sekolah = input("Silahkan masukkan nama Sekolah: ")
     daerah = input("Silahkan masukkan Alamat Sekolah: ")
     bersihkan_layar()
-    soal_survey()
+    soal_survei()
     catatan = input("Silahkan tambahkan catatan mengenai sekolah tersebut: ")
     bersihkan_layar()
     data = {
@@ -152,9 +152,9 @@ def isi_survey():
     }
     daftar_sekolah.append(data)
 
-def lihat_survey():
+def lihat_survei():
     if daftar_sekolah:
-        print("\n======== DATA SURVEY ========")
+        print("\n======== DATA SURVEI ========")
         daftar_sekolah_sorted = sorted(daftar_sekolah, key=lambda x: x['Skala'])
         for i, data in enumerate(daftar_sekolah_sorted, start=1):
             print(f"Index           : {i}")
@@ -164,25 +164,25 @@ def lihat_survey():
             print(f"Poin Kelayakan  : {data['Skala']}")
             print(f"Catatan         : {data['Catatan']}\n")
     else:
-        print("Data Survey Belum Tersedia")
+        print("Data Survei Belum Tersedia")
 
 def menu_fitur2():
     while True:
         print("\n") 
-        print("===== Menu Relung Opini =====") 
-        print("[1] Isi Survey")
-        print("[2] Lihat Hasil Survey")
+        print("========== MENU ==========") 
+        print("[1] Isi Survei")
+        print("[2] Lihat Hasil Survei")
         print("[3] Lihat Jawaban")
         print("[4] Kembali Ke Menu")
-        pilih = input("Masukkan Nomor Pilihan> ")
+        pilih = input("PILIH MENU> ")
         print("\n")
 
         if pilih == "1":
             bersihkan_layar()
-            isi_survey()
+            isi_survei()
         elif pilih == "2":
             bersihkan_layar()
-            lihat_survey()
+            lihat_survei()
         elif pilih == "3":
             bersihkan_layar()
             lihat_jawaban()
