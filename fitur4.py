@@ -93,7 +93,7 @@ def lihat_lomba():
 def menu_fitur4():
     while True:
         print("\n") 
-        print("========== MENU ==========") 
+        print("===== Menu Relung Kompetisi =====") 
         print("[1] Input Lomba")
         print("[2] Lihat Lomba")
         print("[3] Kembali Ke Menu")
