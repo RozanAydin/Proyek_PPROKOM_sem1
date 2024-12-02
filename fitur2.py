@@ -174,7 +174,7 @@ def menu_fitur2():
         print("[2] Lihat Hasil Survei")
         print("[3] Lihat Jawaban")
         print("[4] Kembali Ke Menu")
-        pilih = input("PILIH MENU> ")
+        pilih = input("Masukkan Nomor Pilihan: ")
         print("\n")
 
         if pilih == "1":
