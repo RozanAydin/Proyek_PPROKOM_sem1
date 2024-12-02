@@ -169,7 +169,7 @@ def lihat_survei():
 def menu_fitur2():
     while True:
         print("\n") 
-        print("========== MENU ==========") 
+        print("===== Menu Relung Opini =====") 
         print("[1] Isi Survei")
         print("[2] Lihat Hasil Survei")
         print("[3] Lihat Jawaban")
